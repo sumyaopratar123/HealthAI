@@ -1,16 +1,7 @@
 # **HealthcareAI: Langchain-FAISS-Database-Ollama-Grok-React.js-Flask**
 
 ## **Previews**
-![2](assets/ss2.png)
-![3](assets/ss3.png)
-![4](assets/ss4.png)
-![5](assets/ss5.png)
-![6](assets/ss6.png)
-![7](assets/ss7.png)
-![8](assets/ss8.png)
-![9](assets/ss9.png)
-![10](assets/ss10.png)
-
+live on link vercel 
 ---
 
 This project was developed during the **Hack the Mountain Hackathon**, combining AI-powered features and modern web technologies to create a comprehensive healthcare platform.
