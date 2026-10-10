@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.hai-page,
+.hai-page * {
+  box-sizing: border-box;
+}
+
+.hai-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 30px clamp(14px, 3.4vw, 52px) 24px;
+  background:
+    radial-gradient(circle at 9% 5%, rgba(126, 211, 255, .32), transparent 29%),
+    radial-gradient(circle at 92% 20%, rgba(91, 183, 244, .19), transparent 25%),
+    linear-gradient(135deg, #f3fbff 0%, #e9f6ff 52%, #f7fbff 100%);
+  color: #15314b;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.hai-orb {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border: 1px solid rgba(8, 136, 209, .14);
+  border-radius: 50%;
+}
+
+.hai-orb-one {
+  width: 280px;
+  height: 280px;
+  top: 180px;
+  right: -170px;
+}
+
+.hai-orb-two {
+  width: 210px;
+  height: 210px;
+  bottom: 70px;
+  left: -150px;
+}
+
+.hai-dashboard {
+  position: relative;
+  z-index: 1;
+  width: min(1420px, 100%);
+  margin: 0 auto;
+}
+
+/* Welcome banner */
+
+.hai-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 225px;
+  padding: clamp(25px, 4vw, 46px);
+  border-radius: 27px;
+  color: #fff;
+  background: linear-gradient(
+    112deg,
+    #0576bf,
+    #0798df 55%,
+    #54c7f7
+  );
+  box-shadow: 0 20px 45px rgba(0, 121, 193, .2);
+}
+
+.hai-hero::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 300px;
+  right: -80px;
+  bottom: -190px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: 50%;
+  transform: rotate(-22deg);
+}
+
+.hai-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 7px;
+  color: #087cb9;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .15em;
+  line-height: 1.5;
+}
+
+.hai-hero .hai-eyebrow {
+  color: #e8f8ff;
+}
+
+.hai-hero h1 {
+  position: relative;
+  z-index: 1;
+  margin: 8px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(31px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.hai-hero h1 span {
+  color: #d4f5ff;
+}
+
+.hai-hero > p {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: 15px 0 0;
+  color: rgba(255, 255, 255, .92);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hai-hero-art {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+  display: grid;
+  width: 112px;
+  height: 112px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, .44);
+  border-radius: 32px;
+  color: #fff;
+  background: rgba(255, 255, 255, .16);
+  box-shadow: 0 15px 35px rgba(0, 65, 125, .15);
+  transform: translateY(-50%) rotate(-8deg);
+}
+
+/* Profile strip */
+
+.hai-profile-strip {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 22px 0 34px;
+  padding: 21px 24px;
+  border: 1px solid rgba(204, 231, 248, .9);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 16px 44px rgba(25, 112, 173, .09);
+}
+
+.hai-avatar-wrap {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  place-items: center;
+  overflow: hidden;
+  border: 3px solid #d8f1ff;
+  border-radius: 24px;
+  background: #dff3ff;
+}
+
+.hai-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hai-avatar-fallback {
+  display: grid;
+  place-items: center;
+  color: #0576bf;
+  font: 800 25px 'Manrope', sans-serif;
+}
+
+.hai-profile-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.hai-name-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.hai-name-line h2 {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: #123652;
+  font: 800 22px 'Manrope', sans-serif;
+}
+
+.hai-role {
+  display: inline-flex;
+  border: 1px solid #c5eaff;
+  border-radius: 99px;
+  padding: 5px 11px;
+  color: #0878ba;
+  background: #effaff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hai-role.doctor {
+  border-color: #b8eee1;
+  color: #087e6b;
+  background: #effcf8;
+}
+
+.hai-profile-main > p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  overflow-wrap: anywhere;
+  margin: 7px 0;
+  color: #6a8196;
+  font-size: 13px;
+}
+
+.hai-profile-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #148c79;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Buttons */
+
+.hai-refresh-button,
+.hai-primary-button,
+.hai-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 15px;
+  font: 700 12px 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition:
+    transform .18s,
+    background .18s,
+    box-shadow .18s;
+}
+
+.hai-refresh-button {
+  flex: 0 0 auto;
+  border: 1px solid #d6eefa;
+  color: #0877b7;
+  background: #f5fbff;
+}
+
+.hai-refresh-button:hover,
+.hai-secondary-button:hover {
+  background: #e6f6ff;
+  transform: translateY(-1px);
+}
+
+.hai-refresh-button:disabled {
+  cursor: wait;
+  opacity: .65;
+}
+
+.hai-spin {
+  animation: hai-rotate 1s linear infinite;
+}
+
+@keyframes hai-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Section headings */
+
+.hai-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 17px;
+}
+
+.hai-section-title .hai-eyebrow {
+  margin-bottom: 5px;
+}
+
+.hai-section-title h2,
+.hai-appointments-heading h2 {
+  margin: 0;
+  color: #123652;
+  font: 800 clamp(22px, 2.4vw, 29px) 'Manrope', sans-serif;
+  letter-spacing: -.035em;
+}
+
+.hai-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #d6eefa;
+  border-radius: 99px;
+  padding: 8px 12px;
+  color: #2786b8;
+  background: rgba(255, 255, 255, .7);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Information cards */
+
+.hai-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+}
+
+.hai-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dceefa;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 10px 30px rgba(25, 112, 173, .06);
+}
+
+.hai-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 21px 17px;
+  border-bottom: 1px solid #eaf3f9;
+}
+
+.hai-card-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  place-items: center;
+  border-radius: 14px;
+  color: #087fc1;
+  background: #e8f7ff;
+}
+
+.hai-card-heading h2 {
+  margin: 0;
+  color: #163b58;
+  font: 800 16px 'Manrope', sans-serif;
+}
+
+.hai-card-heading p {
+  margin: 4px 0 0;
+  color: #8195a7;
+  font-size: 12px;
+}
+
+.hai-info-list {
+  padding: 4px 20px 9px;
+}
+
+.hai-info-row {
+  display: grid;
+  grid-template-columns: 26px minmax(95px, .75fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: 9px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf4f8;
+}
+
+.hai-info-row:last-child {
+  border-bottom: 0;
+}
+
+.hai-info-icon {
+  display: inline-flex;
+  padding-top: 1px;
+  color: #4c9ecb;
+}
+
+.hai-info-label {
+  color: #71869a;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.hai-info-value {
+  overflow-wrap: anywhere;
+  color: #203f58;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: right;
+}
+
+/* Appointments */
+
+.hai-appointments {
+  margin-top: 35px;
+  overflow: hidden;
+  border: 1px solid #dceefa;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 16px 44px rgba(25, 112, 173, .09);
+}
+
+.hai-appointments-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0;
+  padding: 24px 26px;
+  border-bottom: 1px solid #eaf3f9;
+}
+
+.hai-appointments-heading > div:first-child > p:last-child {
+  margin: 7px 0 0;
+  color: #8195a7;
+  font-size: 13px;
+}
+
+.hai-booked-count {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #6c8396;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hai-booked-count strong {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  color: #0878ba;
+  background: #eaf7ff;
+  font-size: 18px;
+}
+
+.hai-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.hai-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.hai-table th {
+  padding: 15px 20px;
+  color: #68849b;
+  background: #f5fbff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.hai-table td {
+  padding: 17px 20px;
+  border-top: 1px solid #edf4f8;
+  color: #35536b;
+  font-size: 12px;
+}
+
+.hai-email-cell {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hai-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 99px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.hai-status.approved {
+  color: #087e62;
+  background: #e8fbf3;
+}
+
+.hai-status.pending {
+  color: #94620c;
+  background: #fff5dc;
+}
+
+/* Loading, empty and error states */
+
+.hai-no-appointments {
+  display: flex;
+  min-height: 185px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.hai-empty-icon {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  border: 1px solid #d3edfc;
+  border-radius: 22px;
+  color: #0788d1;
+  background: #eef9ff;
+}
+
+.hai-empty-icon.small {
+  width: 52px;
+  height: 52px;
+  border-radius: 17px;
+}
+
+.hai-no-appointments h3 {
+  margin: 13px 0 5px;
+  color: #1b3c56;
+  font: 800 16px 'Manrope', sans-serif;
+}
+
+.hai-no-appointments p {
+  max-width: 450px;
+  margin: 0;
+  color: #7a8fa2;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.hai-secondary-button {
+  margin-top: 16px;
+  border: 1px solid #cce9f9;
+  color: #0878ba;
+  background: #f4fbff;
+}
+
+.hai-loader {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 10px;
+  border: 3px solid #d5efff;
+  border-top-color: #0788d1;
+  border-radius: 50%;
+  animation: hai-rotate .8s linear infinite;
+}
+
+.hai-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 18px 22px 0;
+  border: 1px solid #f6d4d4;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #a83232;
+  background: #fff6f6;
+  font-size: 12px;
+}
+
+.hai-error button {
+  border: 0;
+  color: #a83232;
+  background: transparent;
+  font: 700 12px 'DM Sans', sans-serif;
+  cursor: pointer;
+}
+
+.hai-updated {
+  margin: 0;
+  padding: 0 26px 18px;
+  color: #92a4b2;
+  font-size: 10px;
+  text-align: right;
+}
+
+/* Footer */
+
+.hai-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 2px 0;
+  color: #6d8da5;
+  font-size: 11px;
+}
+
+.hai-footer > svg {
+  color: #168dca;
+}
+
+.hai-footer small {
+  margin-left: auto;
+  color: #91a4b3;
+  text-align: right;
+}
+
+/* Sign-in fallback */
+
+.hai-empty-state {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(520px, 100%);
+  min-height: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8vh auto;
+  border: 1px solid #dceefa;
+  border-radius: 28px;
+  padding: 40px;
+  background: rgba(255, 255, 255, .95);
+  box-shadow: 0 16px 44px rgba(25, 112, 173, .09);
+  text-align: center;
+}
+
+.hai-empty-state .hai-eyebrow {
+  margin-top: 20px;
+}
+
+.hai-empty-state h1 {
+  margin: 0;
+  color: #143c59;
+  font: 800 27px 'Manrope', sans-serif;
+}
+
+.hai-empty-state > p:not(.hai-eyebrow) {
+  color: #71869a;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.hai-primary-button {
+  margin-top: 14px;
+  color: #fff;
+  background: #0788d1;
+  box-shadow: 0 10px 20px rgba(7, 136, 209, .2);
+}
+
+.hai-primary-button:hover {
+  background: #056fb2;
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .hai-hero-art {
+    right: 5%;
+    width: 85px;
+    height: 85px;
+  }
+
+  .hai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hai-profile-strip {
+    flex-wrap: wrap;
+  }
+
+  .hai-refresh-button {
+    margin-left: 94px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .hai-page {
+    padding: 14px 12px 20px;
+  }
+
+  .hai-hero {
+    min-height: auto;
+    padding: 26px 22px;
+    border-radius: 21px;
+  }
+
+  .hai-hero h1 {
+    font-size: 32px;
+  }
+
+  .hai-hero > p {
+    font-size: 13px;
+  }
+
+  .hai-hero-art {
+    display: none;
+  }
+
+  .hai-profile-strip {
+    gap: 13px;
+    margin: 15px 0 27px;
+    padding: 17px;
+    border-radius: 18px;
+  }
+
+  .hai-avatar-wrap {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+    border-radius: 19px;
+  }
+
+  .hai-name-line h2 {
+    font-size: 18px;
+  }
+
+  .hai-refresh-button {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hai-section-title {
+    align-items: flex-start;
+  }
+
+  .hai-private {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+
+  .hai-card-heading {
+    padding: 17px 16px 14px;
+  }
+
+  .hai-info-list {
+    padding: 3px 16px 7px;
+  }
+
+  .hai-info-row {
+    grid-template-columns: 22px minmax(75px, .8fr) minmax(0, 1.2fr);
+    gap: 7px;
+    padding: 12px 0;
+  }
+
+  .hai-info-label,
+  .hai-info-value {
+    font-size: 11px;
+  }
+
+  .hai-appointments-heading {
+    padding: 20px 17px;
+  }
+
+  .hai-table th,
+  .hai-table td {
+    padding: 13px 14px;
+  }
+
+  .hai-footer small {
+    width: 100%;
+    margin-left: 27px;
+    text-align: left;
+  }
+
+  .hai-empty-state {
+    min-height: 350px;
+    padding: 27px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hai-page * {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

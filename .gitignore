@@ -1,0 +1,28 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Node / React
+node_modules/
+frontend/build/
+
+# Uploaded files and local databases
+backend/uploads/
+*.sqlite3
+
+# Credentials
+firebase-service-account.json
+**/firebase-service-account.json
+
+# Logs
+*.log

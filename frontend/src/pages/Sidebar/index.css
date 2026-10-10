@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+.hai-sidebar,
+.hai-sidebar * {
+  box-sizing: border-box;
+}
+
+.hai-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1000;
+  display: flex;
+  width: 256px;
+  height: 100vh;
+  height: 100dvh;
+  flex-direction: column;
+  border-right: 1px solid #d4eafa;
+  background: linear-gradient(180deg, #f5fbff, #e9f6ff 58%, #e0f1ff);
+  color: #234963;
+  box-shadow: 5px 0 26px rgba(28, 105, 157, 0.07);
+  font-family: 'DM Sans', sans-serif;
+  transition: width 0.25s ease;
+}
+
+.hai-sidebar-collapsed {
+  width: 56px;
+}
+
+.hai-sidebar-brand {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  gap: 11px;
+  padding: 16px;
+  border-bottom: 1px solid #dceefa;
+}
+
+.hai-brand-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  flex: 0 0 43px;
+  place-items: center;
+  border-radius: 14px;
+  color: white;
+  background: linear-gradient(140deg, #0785cc, #43b9ed);
+  box-shadow: 0 7px 18px rgba(8, 134, 205, 0.2);
+}
+
+.hai-brand-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.hai-brand-text h2 {
+  margin: 0;
+  color: #123d5b;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.hai-brand-text span {
+  display: block;
+  margin-top: 4px;
+  color: #7291a9;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.hai-mobile-close {
+  display: none;
+}
+
+.hai-sidebar-caption {
+  min-height: 42px;
+  padding: 21px 20px 9px;
+  color: #91aabe;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.hai-sidebar-nav {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 7px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 5px 10px 18px;
+}
+
+.hai-sidebar-link {
+  position: relative;
+  display: flex;
+  min-height: 47px;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0 11px;
+  color: #45657f;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.hai-sidebar-link:hover {
+  border-color: #d7edfc;
+  color: #087fc1;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.hai-sidebar-link-active {
+  border-color: #d0ebfc;
+  color: #057cbf;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(19, 119, 178, 0.09);
+}
+
+.hai-sidebar-link-active::before {
+  position: absolute;
+  top: 9px;
+  bottom: 9px;
+  left: -11px;
+  width: 4px;
+  border-radius: 0 5px 5px 0;
+  background: #0799e3;
+  content: '';
+}
+
+.hai-sidebar-link-icon {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  flex: 0 0 25px;
+  place-items: center;
+  color: #6a9bbb;
+}
+
+.hai-sidebar-link-active .hai-sidebar-link-icon {
+  color: #078bd0;
+}
+
+.hai-sidebar-link-label {
+  overflow: hidden;
+  flex: 1;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+}
+
+.hai-sidebar-home-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #28b8e8;
+}
+
+.hai-sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 13px 10px 14px;
+  border-top: 1px solid #dceefa;
+}
+
+.hai-sidebar-security {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 55px;
+  padding: 9px;
+  border: 1px solid #d6edfb;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.67);
+}
+
+.hai-security-icon {
+  display: grid;
+  width: 33px;
+  height: 33px;
+  flex: 0 0 33px;
+  place-items: center;
+  border-radius: 10px;
+  color: #0787c9;
+  background: #e2f4ff;
+}
+
+.hai-sidebar-security strong,
+.hai-sidebar-security span {
+  display: block;
+}
+
+.hai-sidebar-security strong {
+  color: #2c5875;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.hai-sidebar-security span {
+  margin-top: 4px;
+  color: #819bad;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.hai-sidebar-logout {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  padding: 0 11px;
+  color: #47708d;
+  background: transparent;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hai-sidebar-logout:hover {
+  border-color: #f7dada;
+  color: #c84c57;
+  background: #fff2f2;
+}
+
+.hai-sidebar-logout .hai-sidebar-link-icon {
+  color: inherit;
+}
+
+.hai-sidebar-collapse {
+  display: flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  border: 1px solid #dceefa;
+  border-radius: 10px;
+  padding: 0 11px;
+  color: #6d8ba1;
+  background: rgba(255, 255, 255, 0.55);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.hai-sidebar-collapse:hover {
+  color: #087fc1;
+  background: white;
+}
+
+.hai-sidebar-collapse span {
+  white-space: nowrap;
+}
+
+/* Collapsed state */
+
+.hai-sidebar-collapsed .hai-sidebar-brand {
+  justify-content: center;
+  padding: 12px 6px;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-caption {
+  min-height: 22px;
+  padding: 0;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-nav {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-link {
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-link-active::before {
+  left: -6px;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-bottom {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-security {
+  justify-content: center;
+  padding: 7px 0;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-logout {
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+}
+
+.hai-sidebar-collapsed .hai-sidebar-collapse {
+  justify-content: center;
+  padding: 0;
+}
+
+/* Mobile */
+
+.hai-mobile-menu,
+.hai-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .hai-mobile-menu {
+    position: fixed;
+    z-index: 990;
+    top: 12px;
+    left: 12px;
+    display: grid;
+    width: 43px;
+    height: 43px;
+    place-items: center;
+    border: 1px solid #d5eafa;
+    border-radius: 13px;
+    color: #087fc1;
+    background: white;
+    box-shadow: 0 4px 14px rgba(21, 101, 155, 0.12);
+    cursor: pointer;
+  }
+
+  .hai-sidebar {
+    width: 270px;
+    max-width: 86vw;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+  }
+
+  .hai-sidebar.hai-sidebar-mobile-open {
+    transform: translateX(0);
+  }
+
+  .hai-sidebar-collapsed {
+    width: 270px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-brand {
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-caption {
+    min-height: 42px;
+    padding: 21px 20px 9px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-nav {
+    padding: 5px 10px 18px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-link {
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 0 11px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-bottom {
+    padding: 13px 10px 14px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-security {
+    justify-content: flex-start;
+    padding: 9px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-logout {
+    justify-content: flex-start;
+    gap: 11px;
+    padding: 0 11px;
+  }
+
+  .hai-sidebar-collapsed .hai-sidebar-collapse {
+    justify-content: flex-start;
+    padding: 0 11px;
+  }
+
+  .hai-mobile-close {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    margin-left: auto;
+    border: 0;
+    border-radius: 10px;
+    color: #547a96;
+    background: #edf8ff;
+    cursor: pointer;
+  }
+
+  .hai-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 995;
+    display: block;
+    border: 0;
+    background: rgba(13, 43, 66, 0.35);
+    cursor: pointer;
+  }
+}

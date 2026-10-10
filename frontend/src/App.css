@@ -1,0 +1,80 @@
+
+/* HealthAI — Sky Blue Sidebar Theme */
+
+/* Sidebar container */
+.sidebar,
+.side-bar,
+.sidebar-container {
+  background: linear-gradient(
+    180deg,
+    #eaf7ff 0%,
+    #d9efff 55%,
+    #c7e7ff 100%
+  ) !important;
+
+  color: #17466b !important;
+  border-right: 1px solid #c7e5f8;
+  box-shadow: 5px 0 24px rgba(34, 120, 180, 0.07);
+}
+
+/* Sidebar brand / title */
+.sidebar h1,
+.sidebar h2,
+.sidebar .logo,
+.side-bar h1,
+.side-bar h2 {
+  color: #087fc1 !important;
+  font-weight: 800;
+}
+
+/* Navigation links */
+.sidebar a,
+.sidebar button,
+.side-bar a,
+.side-bar button,
+.sidebar-container a {
+  color: #315b79 !important;
+  border-radius: 12px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect */
+.sidebar a:hover,
+.sidebar button:hover,
+.side-bar a:hover,
+.side-bar button:hover,
+.sidebar-container a:hover {
+  color: #0579bd !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Active navigation item */
+.sidebar .active,
+.sidebar a.active,
+.sidebar .selected,
+.side-bar .active,
+.sidebar-container .active {
+  color: #067dbd !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(26, 124, 185, 0.12);
+  font-weight: 700;
+}
+
+/* Navigation icons */
+.sidebar svg,
+.side-bar svg,
+.sidebar-container svg {
+  color: #168bc9;
+}
+
+/* Logout section */
+.sidebar .logout,
+.sidebar .logout a,
+.side-bar .logout {
+  color: #087fc1 !important;
+}
+
+/* Keep the main content background consistent */
+body {
+  background-color: #eef8ff;
+}
