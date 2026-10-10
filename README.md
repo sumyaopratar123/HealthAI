@@ -58,3 +58,6 @@ We built everything from scratch, including the UI, backend logic, and AI-powere
 3. **Dynamic Interactions**:
    - Real-time database updates ensure seamless interaction between patients and doctors.
    - The chatbot leverages NLP to provide medical-related assistance.
+
+
+# **Maid BY Sumit Ganesh Ade**
