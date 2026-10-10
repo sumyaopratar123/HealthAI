@@ -1,7 +1,6 @@
 # **HealthcareAI: Langchain-FAISS-Database-Ollama-Grok-React.js-Flask**
 
 ## **Previews**
-![1](assets/ss1.png)
 ![2](assets/ss2.png)
 ![3](assets/ss3.png)
 ![4](assets/ss4.png)
