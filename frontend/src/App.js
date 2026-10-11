@@ -11,31 +11,32 @@ import ProtectedRoute from './components/ProtectedRoute'
 import Authentication from './pages/Authentication'
 
 const App = () => {
-  const [auth, setAuth] = useState(localStorage.getItem('auth'))
-  const [ml, setMl] = useState(64);
+  const [auth] = useState(() => localStorage.getItem('auth'))
+  const [ml, setMl] = useState(64)
 
   useEffect(() => {
     if (auth) {
       localStorage.setItem('auth', auth)
     } else {
       localStorage.removeItem('auth')
-      setAuth(null)
     }
-
-    return () => {
-      if (auth) {
-        localStorage.setItem('auth', auth)
-      }
-    }
-  }, [localStorage])
+  }, [auth])
 
   return (
     <Router>
       <div className="flex">
         {auth && <Sidebar ml={ml} setMl={setMl} />}
-        <div className={`flex-grow transition-all duration-300 ${auth && `${ml == 14 && "ml-14"} ${ml == 64 && "ml-64"}`}`}>
+
+        <div
+          className={`flex-grow transition-all duration-300 ${
+            auth
+              ? `${ml === 14 ? 'ml-14' : ''} ${ml === 64 ? 'ml-64' : ''}`
+              : ''
+          }`}
+        >
           <Routes>
             <Route path="/auth" element={<Authentication />} />
+
             <Route
               path="/"
               element={
@@ -44,6 +45,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/global-news"
               element={
@@ -52,6 +54,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/resource-finder"
               element={
@@ -60,6 +63,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/report-explanation"
               element={
@@ -68,6 +72,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/chatbot"
               element={
@@ -76,6 +81,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
+
             <Route
               path="/appointment"
               element={
@@ -84,7 +90,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-          </Routes> 
+          </Routes>
         </div>
       </div>
     </Router>
