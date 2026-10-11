@@ -86,3 +86,4 @@ langchain-huggingface==0.1.2
 langchain-text-splitters==0.3.2
 PyPDF==5.1.0
 gunicorn
+firebase-admin==6.6.0
